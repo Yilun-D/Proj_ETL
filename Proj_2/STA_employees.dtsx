@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STA_Employees"
   DTS:PackageType="5"
-  DTS:VersionBuild="8"
-  DTS:VersionGUID="{4D89AAF6-2DD8-48D4-9743-705CF49123D5}">
+  DTS:VersionBuild="9"
+  DTS:VersionGUID="{07A168BE-997F-4A16-A85C-45625BBE41FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -505,21 +505,21 @@
         <NodeLayout
           Size="208.8,41.6"
           Id="Package\DFT - STA Employees\OLE_DST - STA Employess"
-          TopLeft="72.1666646632884,139.499999276797" />
+          TopLeft="69.6666647998823,129.099999349117" />
         <EdgeLayout
           Id="Package\DFT - STA Employees.Paths[Flat File Source Output]"
-          TopLeft="173.333330282735,85.2333330681589">
+          TopLeft="172.083330351032,85.2333330681589">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54.2666662086381"
+              EndConnector="0,43.8666662809584"
               Start="0,0"
-              End="0,46.7666662086381">
+              End="0,36.3666662809584">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,46.7666662086381" />
+                    End="0,36.3666662809584" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
