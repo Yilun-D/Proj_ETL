@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STA_Calls_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{4C2634CB-BF7C-4A87-BB2F-29AACFE1F8D9}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{7AFB4FB0-15E1-4A53-9FF1-8E1A18486F3D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -149,13 +149,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\FELC - Loop over files in folder Calls_data"
+      DTS:refId="Package\Foreach Loop Container"
       DTS:CreationName="STOCK:FOREACHLOOP"
       DTS:Description="Foreach Loop Container"
       DTS:DTSID="{7A2AAE2F-5E68-4BAA-B0EF-1D98B63A1B53}"
       DTS:ExecutableType="STOCK:FOREACHLOOP"
       DTS:LocaleID="-1"
-      DTS:ObjectName="FELC - Loop over files in folder Calls_data">
+      DTS:ObjectName="Foreach Loop Container">
       <DTS:ForEachEnumerator
         DTS:CreationName="Microsoft.ForEachFileEnumerator"
         DTS:DTSID="{0F2DBFC5-6E0F-41F4-9402-C735754009C1}"
@@ -187,7 +187,7 @@
       </DTS:Variables>
       <DTS:Executables>
         <DTS:Executable
-          DTS:refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data"
+          DTS:refId="Package\Foreach Loop Container\DFT - Calls_data"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
           DTS:DTSID="{14140764-011D-4967-B468-7C5DB906FD25}"
@@ -201,7 +201,7 @@
               version="1">
               <components>
                 <component
-                  refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data"
+                  refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data"
                   componentClassID="Microsoft.FlatFileSource"
                   contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
                   description="Flat File Source"
@@ -221,24 +221,24 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Connections[FlatFileConnection]"
+                      refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Connections[FlatFileConnection]"
                       connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
                       connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
                       name="FlatFileConnection" />
                   </connections>
                   <outputs>
                     <output
-                      refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output]"
+                      refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output]"
                       name="Flat File Source Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallTimestamp]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallTimestamp]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallTimestamp]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallTimestamp]"
                           length="50"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallTimestamp]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallTimestamp]"
                           name="CallTimestamp"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -253,13 +253,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[Call Type]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[Call Type]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[Call Type]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[Call Type]"
                           length="50"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[Call Type]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[Call Type]"
                           name="Call Type"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -274,13 +274,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[EmployeeID]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[EmployeeID]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[EmployeeID]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[EmployeeID]"
                           length="50"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[EmployeeID]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[EmployeeID]"
                           name="EmployeeID"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -295,13 +295,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallDuration]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallDuration]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallDuration]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallDuration]"
                           length="50"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallDuration]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallDuration]"
                           name="CallDuration"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -316,13 +316,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[WaitTime]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[WaitTime]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[WaitTime]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[WaitTime]"
                           length="50"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[WaitTime]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[WaitTime]"
                           name="WaitTime"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -337,13 +337,13 @@
                           </properties>
                         </outputColumn>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallAbandoned]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallAbandoned]"
                           dataType="wstr"
                           errorOrTruncationOperation="Conversion"
                           errorRowDisposition="FailComponent"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallAbandoned]"
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallAbandoned]"
                           length="50"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallAbandoned]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallAbandoned]"
                           name="CallAbandoned"
                           truncationRowDisposition="FailComponent">
                           <properties>
@@ -361,59 +361,59 @@
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallTimestamp]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallTimestamp]"
                           dataType="wstr"
                           length="50"
                           name="CallTimestamp" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[Call Type]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[Call Type]"
                           dataType="wstr"
                           length="50"
                           name="Call Type" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[EmployeeID]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[EmployeeID]"
                           dataType="wstr"
                           length="50"
                           name="EmployeeID" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallDuration]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallDuration]"
                           dataType="wstr"
                           length="50"
                           name="CallDuration" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[WaitTime]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[WaitTime]"
                           dataType="wstr"
                           length="50"
                           name="WaitTime" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallAbandoned]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].ExternalColumns[CallAbandoned]"
                           dataType="wstr"
                           length="50"
                           name="CallAbandoned" />
                       </externalMetadataColumns>
                     </output>
                     <output
-                      refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output]"
+                      refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output]"
                       isErrorOut="true"
                       name="Flat File Source Error Output">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           codePage="65001"
                           dataType="text"
                           description="Flat File Source Error Output Column"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
                           name="Flat File Source Error Output Column" />
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -422,7 +422,7 @@
                   </outputs>
                 </component>
                 <component
-                  refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data"
+                  refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data"
                   componentClassID="Microsoft.OLEDBDestination"
                   contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
                   description="OLE DB Destination"
@@ -479,7 +479,7 @@
                   </properties>
                   <connections>
                     <connection
-                      refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Connections[OleDbConnection]"
+                      refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Connections[OleDbConnection]"
                       connectionManagerID="{B10A0294-4AFC-407D-BBD7-4B10127B3D30}:external"
                       connectionManagerRefId="Project.ConnectionManagers[localhost_proj_STA]"
                       description="The OLE DB runtime connection used to access the database."
@@ -487,84 +487,84 @@
                   </connections>
                   <inputs>
                     <input
-                      refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input]"
+                      refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input]"
                       errorOrTruncationOperation="Insert"
                       errorRowDisposition="FailComponent"
                       hasSideEffects="true"
                       name="OLE DB Destination Input">
                       <inputColumns>
                         <inputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[CallTimestamp]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="CallTimestamp"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallTimestamp]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallTimestamp]" />
                         <inputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[Call Type]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[Call Type]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="Call Type"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[Call Type]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[Call Type]" />
                         <inputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[EmployeeID]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="EmployeeID"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[EmployeeID]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[EmployeeID]" />
                         <inputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[CallDuration]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[CallDuration]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="CallDuration"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallDuration]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallDuration]" />
                         <inputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[WaitTime]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[WaitTime]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="WaitTime"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[WaitTime]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[WaitTime]" />
                         <inputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].Columns[CallAbandoned]"
                           cachedDataType="wstr"
                           cachedLength="50"
                           cachedName="CallAbandoned"
-                          externalMetadataColumnId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallAbandoned]" />
+                          externalMetadataColumnId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output].Columns[CallAbandoned]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallTimestamp]"
                           dataType="wstr"
                           length="255"
                           name="CallTimestamp" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[Call Type]"
                           dataType="wstr"
                           length="255"
                           name="Call Type" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[EmployeeID]"
                           dataType="wstr"
                           length="255"
                           name="EmployeeID" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallDuration]"
                           dataType="wstr"
                           length="255"
                           name="CallDuration" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[WaitTime]"
                           dataType="wstr"
                           length="255"
                           name="WaitTime" />
                         <externalMetadataColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input].ExternalColumns[CallAbandoned]"
                           dataType="wstr"
                           length="255"
                           name="CallAbandoned" />
@@ -573,22 +573,22 @@
                   </inputs>
                   <outputs>
                     <output
-                      refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output]"
+                      refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output]"
                       exclusionGroup="1"
                       isErrorOut="true"
                       name="OLE DB Destination Error Output"
-                      synchronousInputId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input]">
+                      synchronousInputId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input]">
                       <outputColumns>
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           dataType="i4"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                           name="ErrorCode"
                           specialFlags="1" />
                         <outputColumn
-                          refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          refId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           dataType="i4"
-                          lineageId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          lineageId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                           name="ErrorColumn"
                           specialFlags="2" />
                       </outputColumns>
@@ -599,16 +599,16 @@
               </components>
               <paths>
                 <path
-                  refId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data.Paths[Flat File Source Output]"
-                  endId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input]"
+                  refId="Package\Foreach Loop Container\DFT - Calls_data.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data.Inputs[OLE DB Destination Input]"
                   name="Flat File Source Output"
-                  startId="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output]" />
+                  startId="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data.Outputs[Flat File Source Output]" />
               </paths>
             </pipeline>
           </DTS:ObjectData>
         </DTS:Executable>
         <DTS:Executable
-          DTS:refId="Package\FELC - Loop over files in folder Calls_data\FSYS - Move files to Archive"
+          DTS:refId="Package\Foreach Loop Container\FSYS - Move files to Archive"
           DTS:CreationName="Microsoft.FileSystemTask"
           DTS:Description="File System Task"
           DTS:DTSID="{1E34578C-18BC-43AC-AECB-5D68B5BBE355}"
@@ -631,13 +631,13 @@
       </DTS:Executables>
       <DTS:PrecedenceConstraints>
         <DTS:PrecedenceConstraint
-          DTS:refId="Package\FELC - Loop over files in folder Calls_data.PrecedenceConstraints[Constraint]"
+          DTS:refId="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
           DTS:DTSID="{AF168F1E-5362-45AE-8064-65392E554CC7}"
-          DTS:From="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data"
+          DTS:From="Package\Foreach Loop Container\DFT - Calls_data"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
-          DTS:To="Package\FELC - Loop over files in folder Calls_data\FSYS - Move files to Archive" />
+          DTS:To="Package\Foreach Loop Container\FSYS - Move files to Archive" />
       </DTS:PrecedenceConstraints>
       <DTS:ForEachVariableMappings>
         <DTS:ForEachVariableMapping
@@ -674,7 +674,7 @@
       DTS:From="Package\SQL - Truncate STA Calls_Data"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\FELC - Loop over files in folder Calls_data" />
+      DTS:To="Package\Foreach Loop Container" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -690,26 +690,26 @@
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="156.8,41.6"
-          Id="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data"
-          TopLeft="59.1333311022983,15.2333323811161" />
+          Id="Package\Foreach Loop Container\DFT - Calls_data"
+          TopLeft="60.7999976779024,18.699999023676" />
         <NodeLayout
           Size="210.4,41.6"
-          Id="Package\FELC - Loop over files in folder Calls_data\FSYS - Move files to Archive"
-          TopLeft="39.6666647998824,121.499998517434" />
+          Id="Package\Foreach Loop Container\FSYS - Move files to Archive"
+          TopLeft="35.4999983608723,123.233331838714" />
         <EdgeLayout
-          Id="Package\FELC - Loop over files in folder Calls_data.PrecedenceConstraints[Constraint]"
-          TopLeft="141.19999795109,56.8333323811161">
+          Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
+          TopLeft="139.949998019387,60.299999023676">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,64.666666136318"
+              EndConnector="0,62.933332815038"
               Start="0,0"
-              End="0,57.166666136318">
+              End="0,55.433332815038">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,57.166666136318" />
+                    End="0,55.433332815038" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -723,26 +723,26 @@
           IsExpanded="True"
           PanelSize="297.6,217.6"
           Size="297.6,260.8"
-          Id="Package\FELC - Loop over files in folder Calls_data"
-          TopLeft="69.6666647998822,149.899999204477" />
+          Id="Package\Foreach Loop Container"
+          TopLeft="96.3333300095466,154.233332507677" />
         <NodeLayout
           Size="225.6,41.6"
           Id="Package\SQL - Truncate STA Calls_Data"
-          TopLeft="102.166661385033,63.5666662628783" />
+          TopLeft="129.666659882499,64.4333329235183" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="216.716663092458,105.166666262878">
+          TopLeft="243.799994946023,106.033332923518">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44.7333329415985"
+              EndConnector="0,48.1999995841587"
               Start="0,0"
-              End="0,37.2333329415985">
+              End="0,40.6999995841587">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.2333329415985" />
+                    End="0,40.6999995841587" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -755,20 +755,20 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data">
+    design-time-name="Package\Foreach Loop Container\DFT - Calls_data">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="237.6,41.6"
-          Id="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\FF_SRC - Calls_data"
+          Id="Package\Foreach Loop Container\DFT - Calls_data\FF_SRC - Calls_data"
           TopLeft="54.8333318697082,43.0333327464925" />
         <NodeLayout
           Size="286.4,41.6"
-          Id="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data"
+          Id="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data"
           TopLeft="30.6666667718025,140.699998577039" />
         <EdgeLayout
-          Id="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data.Paths[Flat File Source Output]"
+          Id="Package\Foreach Loop Container\DFT - Calls_data.Paths[Flat File Source Output]"
           TopLeft="173.749999320755,84.6333327464925">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -786,14 +786,16 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FELC - Loop over files in folder Calls_data\DFT - Calls_data\OLE_DST - STA Calls_data">
+    design-time-name="Package\Foreach Loop Container\DFT - Calls_data\OLE_DST - STA Calls_data">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
