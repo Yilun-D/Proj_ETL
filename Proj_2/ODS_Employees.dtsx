@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Employees"
   DTS:PackageType="5"
-  DTS:VersionBuild="50"
-  DTS:VersionGUID="{65D8529C-5B56-4A3F-84DA-857FD528CE67}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{E8752E67-04DE-4EA4-9FE8-1282AB1E5142}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -981,6 +981,18 @@ where [refTable].[StateCD] = ?</property>
           Size="308,41.6"
           Id="Package\DFT - ODS Employees\DER - Seperate city and state name in Site"
           TopLeft="150.803024400515,95.924241511328" />
+        <NodeLayout
+          Size="208.8,41.6"
+          Id="Package\DFT - ODS Employees\LKP - Join State and Region"
+          TopLeft="200.196959059197,188.287877516795" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\DFT - ODS Employees\OLE_DST - ODS Employees"
+          TopLeft="194.136353329727,373.68181573279" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\DFT - ODS Employees\DCNV - Resizing"
+          TopLeft="228.787866287461,284.424240446392" />
         <EdgeLayout
           Id="Package\DFT - ODS Employees.Paths[OLE DB Source Output]"
           TopLeft="305.727267325602,60.0999998062849">
@@ -1003,36 +1015,6 @@ where [refTable].[StateCD] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="208.8,41.6"
-          Id="Package\DFT - ODS Employees\LKP - Join State and Region"
-          TopLeft="200.196959059197,188.287877516795" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Employees.Paths[Derived Column Output]"
-          TopLeft="304.699991729856,137.524241511328">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50.7636360054667"
-              Start="0,0"
-              End="0,43.2636360054667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.2636360054667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="156.8,41.6"
-          Id="Package\DFT - ODS Employees\DCNV - Resizing"
-          TopLeft="228.787866287461,284.424240446392" />
         <EdgeLayout
           Id="Package\DFT - ODS Employees.Paths[Lookup Match Output]"
           TopLeft="305.892412673329,229.887877516795">
@@ -1057,10 +1039,28 @@ where [refTable].[StateCD] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="211.2,41.6"
-          Id="Package\DFT - ODS Employees\OLE_DST - ODS Employees"
-          TopLeft="194.136353329727,373.68181573279" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Employees.Paths[Derived Column Output]"
+          TopLeft="304.699991729856,137.524241511328">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.7636360054667"
+              Start="0,0"
+              End="0,43.2636360054667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.2636360054667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employees.Paths[Data Conversion Output]"
           TopLeft="303.462109808594,326.024240446392">
@@ -1087,7 +1087,7 @@ where [refTable].[StateCD] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Employees\OLE_SRC - STA Employees">
+    design-time-name="Package\DFT - ODS Employees\OLE_DST - ODS Employees">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1105,7 +1105,7 @@ where [refTable].[StateCD] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1115,7 +1115,7 @@ where [refTable].[StateCD] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1123,7 +1123,7 @@ where [refTable].[StateCD] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT - ODS Employees\OLE_DST - ODS Employees">
+    design-time-name="Package\DFT - ODS Employees\OLE_SRC - STA Employees">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
