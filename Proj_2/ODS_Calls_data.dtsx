@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Calls_data"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{D598D87E-DE07-4DA3-AAD9-424BFEEEDCC1}">
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{BBDAE648-57A0-43B2-BE26-9DCCC23A0AA7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -350,6 +350,86 @@
                       refId="Package\DFT - ODS Calls_data\DCNV - Date_DBdate and Time_DBtime.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
                       lineageId="Package\DFT - ODS Calls_data\DCNV - Date_DBdate and Time_DBtime.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Add WithinSLA"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Inputs[Derived Column Input].Columns[WaitTime_Int]"
+                      cachedDataType="ui4"
+                      cachedName="WaitTime_Int"
+                      lineageId="Package\DFT - ODS Calls_data\DCNV - Convert CallDuration and WaitTime to INT.Outputs[Data Conversion Output].Columns[WaitTime_Int]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Output].Columns[WithinSLA]"
+                      dataType="bool"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Output].Columns[WithinSLA]"
+                      name="WithinSLA"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">#{Package\DFT - ODS Calls_data\DCNV - Convert CallDuration and WaitTime to INT.Outputs[Data Conversion Output].Columns[WaitTime_Int]} &lt; 35</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">WaitTime_Int &lt; 35</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -837,7 +917,7 @@ where [refTable].[CallTypeID] = ?</property>
               startId="Package\DFT - ODS Calls_data\DCNV - Convert CallDuration and WaitTime to INT.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - ODS Calls_data.Paths[Data Conversion Output2]"
-              endId="Package\DFT - ODS Calls_data\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Inputs[Derived Column Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Calls_data\DCNV - Convert CallAbandoned to Boolean.Outputs[Data Conversion Output]" />
             <path
@@ -845,6 +925,11 @@ where [refTable].[CallTypeID] = ?</property>
               endId="Package\DFT - ODS Calls_data\DCNV - Date_DBdate and Time_DBtime.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\DFT - ODS Calls_data\DER - Seperate Date and Time.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - ODS Calls_data.Paths[Derived Column Output1]"
+              endId="Package\DFT - ODS Calls_data\Data Conversion.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - ODS Calls_data\DER - Add WithinSLA.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - ODS Calls_data.Paths[Lookup Match Output]"
               endId="Package\DFT - ODS Calls_data\DER - Seperate Date and Time.Inputs[Derived Column Input]"
@@ -944,30 +1029,6 @@ where [refTable].[CallTypeID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\DFT - ODS Calls_data.Paths[Lookup Match Output]"
-          TopLeft="217.549997199824,158.766666515999">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.6666655939155"
-              Start="0,0"
-              End="0,45.1666655939155">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.1666655939155" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-48.19138671875,16.7786452969577,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="311.2,41.6"
           Id="Package\DFT - ODS Calls_data\DCNV - Convert CallDuration and WaitTime to INT"
@@ -1020,31 +1081,81 @@ where [refTable].[CallTypeID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="156,41.6"
-          Id="Package\DFT - ODS Calls_data\Data Conversion"
-          TopLeft="140.83332563854,551.199996167024" />
         <EdgeLayout
-          Id="Package\DFT - ODS Calls_data.Paths[Data Conversion Output2]"
-          TopLeft="220.08333151208,501.299997884631">
+          Id="Package\DFT - ODS Calls_data.Paths[Lookup Match Output]"
+          TopLeft="217.549997199824,158.766666515999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,49.8999982823932"
+              EndConnector="0,52.6666655939155"
               Start="0,0"
-              End="0,42.3999982823932">
+              End="0,45.1666655939155">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,42.3999982823932" />
+                    End="0,45.1666655939155" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-8,13.1999991411966,16,16"
+              BoundingBox="-48.19138671875,16.7786452969577,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="179.2,41.6"
+          Id="Package\DFT - ODS Calls_data\DER - Add WithinSLA"
+          TopLeft="134.666659609312,540.366663080785" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Calls_data.Paths[Data Conversion Output2]"
+          TopLeft="222.799998497466,501.299997884631">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.0666651961541"
+              Start="0,0"
+              End="0,31.5666651961541">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5666651961541" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\DFT - ODS Calls_data\Data Conversion"
+          TopLeft="140.499994263053,610.899996076624" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Calls_data.Paths[Derived Column Output1]"
+          TopLeft="221.383326936182,581.966663080785">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.9333329958384"
+              Start="0,0"
+              End="0,21.4333329958384">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.4333329958384" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-8,2.71666649791922,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
