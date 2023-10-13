@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{DBA45D4D-17C6-4048-BAEB-5575B03EDE70}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{D4739654-24F6-47D1-AA09-38D47B8B2B23}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -146,19 +146,19 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT"
+              refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC"
               componentClassID="Microsoft.DataConvert"
               contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Data Conversion"
-              name="DCNV - Convert Call charges to INT"
+              name="DCNV - Convert Call charges to NUMERIC"
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Inputs[Data Conversion Input]"
+                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Inputs[Data Conversion Input]"
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Inputs[Data Conversion Input].Columns[Call Charges]"
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Inputs[Data Conversion Input].Columns[Call Charges]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Call Charges"
@@ -169,18 +169,20 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Output]"
+                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Output]"
                   exclusionGroup="1"
                   name="Data Conversion Output"
-                  synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Output].Columns[Call Charges_Int]"
-                      dataType="r4"
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Output].Columns[CallCharges_Numeric]"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Output].Columns[Call Charges_Int]"
-                      name="Call Charges_Int"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Output].Columns[CallCharges_Numeric]"
+                      name="CallCharges_Numeric"
+                      precision="18"
+                      scale="2"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -198,22 +200,98 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Error Output]"
+                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Data Conversion Error Output"
-                  synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Inputs[Data Conversion Input]">
+                  synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="DCNV - Convert Year to INT"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Inputs[Data Conversion Input].Columns[Year]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Year"
+                      lineageId="Package\DFT - ODS Call_Charges\UPVT - Charges in different year.Outputs[Unpivot Output].Columns[Year]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Output].Columns[Year_Int]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Output].Columns[Year_Int]"
+                      name="Year_Int"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_Charges\UPVT - Charges in different year.Outputs[Unpivot Output].Columns[Year]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -234,12 +312,6 @@
                   name="Data Conversion Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Inputs[Data Conversion Input].Columns[Year]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Year"
-                      lineageId="Package\DFT - ODS Call_Charges\UPVT - Charges in different year.Outputs[Unpivot Output].Columns[Year]" />
-                    <inputColumn
                       refId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Inputs[Data Conversion Input].Columns[Call Type]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -257,34 +329,13 @@
                   synchronousInputId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Inputs[Data Conversion Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[Year_R]"
+                      refId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[CallType_R]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      length="8"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[Year_R]"
-                      name="Year_R"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\DFT - ODS Call_Charges\UPVT - Charges in different year.Outputs[Unpivot Output].Columns[Year]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[Type_R]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      length="50"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[Type_R]"
-                      name="Type_R"
+                      length="100"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[CallType_R]"
+                      name="CallType_R"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
@@ -401,6 +452,81 @@
               </outputs>
             </component>
             <component
+              refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="DER - Trim string in call type"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Inputs[Derived Column Input].Columns[Call Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Call Type"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\DFT - ODS Call_Charges\UPVT - Charges in different year.Outputs[Unpivot Output].Columns[Call Type]"
+                      truncationRowDisposition="FailComponent"
+                      usageType="readWrite">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[TRIM](#{Package\DFT - ODS Call_Charges\UPVT - Charges in different year.Outputs[Unpivot Output].Columns[Call Type]})</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">TRIM([Call Type])</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Inputs[Derived Column Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -473,42 +599,44 @@
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].Columns[Year_R]"
-                      cachedDataType="wstr"
-                      cachedLength="8"
-                      cachedName="Year_R"
+                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].Columns[Year_Int]"
+                      cachedDataType="ui2"
+                      cachedName="Year_Int"
                       externalMetadataColumnId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[Year_R]" />
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Output].Columns[Year_Int]" />
                     <inputColumn
-                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].Columns[Type_R]"
+                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].Columns[CallCharges_Numeric]"
+                      cachedDataType="numeric"
+                      cachedName="CallCharges_Numeric"
+                      cachedPrecision="18"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges]"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Output].Columns[CallCharges_Numeric]" />
+                    <inputColumn
+                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].Columns[CallType_R]"
                       cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Type_R"
-                      externalMetadataColumnId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[Type_R]" />
-                    <inputColumn
-                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].Columns[Call Charges_Int]"
-                      cachedDataType="r4"
-                      cachedName="Call Charges_Int"
-                      externalMetadataColumnId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Call Charges]"
-                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Output].Columns[Call Charges_Int]" />
+                      cachedLength="100"
+                      cachedName="CallType_R"
+                      externalMetadataColumnId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[CallType]"
+                      lineageId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output].Columns[CallType_R]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
-                      dataType="wstr"
-                      length="8"
+                      dataType="i4"
                       name="Year" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Type]"
-                      dataType="wstr"
-                      length="50"
-                      name="Type" />
+                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[CallCharges]"
+                      dataType="numeric"
+                      name="CallCharges"
+                      precision="18"
+                      scale="2" />
                     <externalMetadataColumn
-                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[Call Charges]"
-                      dataType="r4"
-                      name="Call Charges" />
+                      refId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input].ExternalColumns[CallType]"
+                      dataType="wstr"
+                      length="100"
+                      name="CallType" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -899,19 +1027,29 @@
               startId="Package\DFT - ODS Call_Charges\CSPL - Remove empty rows.Outputs[Conditional Split Default Output]" />
             <path
               refId="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output]"
-              endId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Inputs[Data Conversion Input]"
+              endId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Inputs[Data Conversion Input]"
               name="Data Conversion Output"
-              startId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Outputs[Data Conversion Output]" />
+              startId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Outputs[Data Conversion Output]" />
             <path
               refId="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output1]"
               endId="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges.Inputs[OLE DB Destination Input]"
               name="Data Conversion Output"
               startId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Outputs[Data Conversion Output]" />
             <path
+              refId="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output2]"
+              endId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT.Outputs[Data Conversion Output]" />
+            <path
               refId="Package\DFT - ODS Call_Charges.Paths[Derived Column Output]"
-              endId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT.Inputs[Data Conversion Input]"
+              endId="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC.Inputs[Data Conversion Input]"
               name="Derived Column Output"
               startId="Package\DFT - ODS Call_Charges\DER - Replace Call Charges.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\DFT - ODS Call_Charges.Paths[Derived Column Output1]"
+              endId="Package\DFT - ODS Call_Charges\DCNV - Resizing.Inputs[Data Conversion Input]"
+              name="Derived Column Output"
+              startId="Package\DFT - ODS Call_Charges\DER - Trim string in call type.Outputs[Derived Column Output]" />
             <path
               refId="Package\DFT - ODS Call_Charges.Paths[OLE DB Source Output]"
               endId="Package\DFT - ODS Call_Charges\CSPL - Remove empty rows.Inputs[Conditional Split Input]"
@@ -1003,22 +1141,52 @@
     design-time-name="Package\DFT - ODS Call_Charges">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="228.8,41.6"
-          Id="Package\DFT - ODS Call_Charges\UPVT - Charges in different year"
-          TopLeft="78.8333375222151,166.76666658832" />
+          Size="210.4,41.6"
+          Id="Package\DFT - ODS Call_Charges\DER - Replace Call Charges"
+          TopLeft="259.666652779613,245.566664997273" />
         <NodeLayout
           Size="221.6,41.6"
           Id="Package\DFT - ODS Call_Charges\OLE_SRC - STA Call_Charges"
-          TopLeft="91.333328643607,14.1666666063998" />
+          TopLeft="260.499986067415,14.1666666063998" />
+        <NodeLayout
+          Size="228.8,41.6"
+          Id="Package\DFT - ODS Call_Charges\UPVT - Charges in different year"
+          TopLeft="247.999994946023,166.76666658832" />
         <NodeLayout
           Size="208.8,41.6"
           Id="Package\DFT - ODS Call_Charges\CSPL - Remove empty rows"
-          TopLeft="92.1666635705366,88.3666662990385" />
+          TopLeft="261.333320994344,88.3666662990385" />
+        <NodeLayout
+          Size="276.8,41.6"
+          Id="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to NUMERIC"
+          TopLeft="241.333327004479,328.299998589754" />
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_Charges.Paths[Unpivot Output]"
+          TopLeft="363.633323862818,208.36666658832">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.199998408953"
+              Start="0,0"
+              End="0,29.699998408953">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,29.699998408953" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Call_Charges.Paths[OLE DB Source Output]"
-          TopLeft="199.349996107072,55.7666666063998">
+          TopLeft="368.51665353088,55.7666666063998">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1039,8 +1207,42 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\DFT - ODS Call_Charges.Paths[Derived Column Output]"
+          TopLeft="364.866652779613,287.166664997273">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14.8666742248666,41.133333592481"
+              Start="0,0"
+              End="14.8666742248666,33.633333592481">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5666667962405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.5666667962405"
+                    Point2="0,20.5666667962405"
+                    Point3="4,20.5666667962405" />
+                  <mssgle:LineSegment
+                    End="10.8666742248666,20.5666667962405" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10.8666742248666,20.5666667962405"
+                    Point2="14.8666742248666,20.5666667962405"
+                    Point3="14.8666742248666,24.5666667962405" />
+                  <mssgle:LineSegment
+                    End="14.8666742248666,33.633333592481" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\DFT - ODS Call_Charges.Paths[Conditional Split Default Output]"
-          TopLeft="194.900000546376,129.966666299039">
+          TopLeft="364.066657970184,129.966666299039">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1063,75 +1265,65 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="210.4,41.6"
-          Id="Package\DFT - ODS Call_Charges\DER - Replace Call Charges"
-          TopLeft="90.4999953558049,245.566664997273" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_Charges.Paths[Unpivot Output]"
-          TopLeft="194.46666643901,208.36666658832">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,37.199998408953"
-              Start="0,0"
-              End="0,29.699998408953">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,29.699998408953" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="244.8,41.6"
-          Id="Package\DFT - ODS Call_Charges\DCNV - Convert Call charges to INT"
-          TopLeft="72.1666695806715,328.299998589754" />
-        <EdgeLayout
-          Id="Package\DFT - ODS Call_Charges.Paths[Derived Column Output]"
-          TopLeft="195.133332468238,287.166664997273">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,41.1333335924811"
-              Start="0,0"
-              End="0,33.6333335924811">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,33.6333335924811" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="223.2,41.6"
+          Id="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges"
+          TopLeft="282.999997951091,644.166663894388" />
         <NodeLayout
           Size="156.8,41.6"
           Id="Package\DFT - ODS Call_Charges\DCNV - Resizing"
-          TopLeft="118.000005327165,408.766665322714" />
+          TopLeft="316.333327824043,573.433330844309" />
+        <NodeLayout
+          Size="208.8,41.6"
+          Id="Package\DFT - ODS Call_Charges\DCNV - Convert Year to INT"
+          TopLeft="284.666651413673,403.640559675599" />
         <EdgeLayout
           Id="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output]"
-          TopLeft="195.483337453918,369.899998589754">
+          TopLeft="379.733327004479,369.899998589754">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.8666667329602"
+              EndConnector="9.33332440919369,33.7405610858447"
               Start="0,0"
-              End="0,31.3666667329602">
+              End="9.33332440919369,26.2405610858447">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.3666667329602" />
+                    End="0,12.8702805429224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,12.8702805429224"
+                    Point2="0,16.8702805429224"
+                    Point3="4,16.8702805429224" />
+                  <mssgle:LineSegment
+                    End="5.33332440919369,16.8702805429224" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.33332440919369,16.8702805429224"
+                    Point2="9.33332440919369,16.8702805429224"
+                    Point3="9.33332440919369,20.8702805429224" />
+                  <mssgle:LineSegment
+                    End="9.33332440919369,26.2405610858447" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output1]"
+          TopLeft="394.666662887567,615.033330844309">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.1333330500794"
+              Start="0,0"
+              End="0,21.6333330500794">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.6333330500794" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1141,23 +1333,45 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="223.2,41.6"
-          Id="Package\DFT - ODS Call_Charges\OLE_DST - ODS Call_Charges"
-          TopLeft="84.6666754542122,479.499998372793" />
+          Size="210.4,41.6"
+          Id="Package\DFT - ODS Call_Charges\DER - Trim string in call type"
+          TopLeft="291.33331771609,482.080528545381" />
         <EdgeLayout
-          Id="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output1]"
-          TopLeft="196.333340390689,450.366665322714">
+          Id="Package\DFT - ODS Call_Charges.Paths[Data Conversion Output2]"
+          TopLeft="392.799984564881,445.240559675599">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.1333330500789"
+              EndConnector="0,36.8399688697827"
               Start="0,0"
-              End="0,21.6333330500789">
+              End="0,29.3399688697827">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.6333330500789" />
+                    End="0,29.3399688697827" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\DFT - ODS Call_Charges.Paths[Derived Column Output1]"
+          TopLeft="395.633322770067,523.680528545381">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,49.7528022989276"
+              Start="0,0"
+              End="0,42.2528022989276">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.2528022989276" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

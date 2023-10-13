@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ODS_Employees"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{E8752E67-04DE-4EA4-9FE8-1282AB1E5142}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{4F8D0A34-DCC9-4866-BEC4-16BE3795C032}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -978,9 +978,9 @@ where [refTable].[StateCD] = ?</property>
           Id="Package\DFT - ODS Employees\OLE_SRC - STA Employees"
           TopLeft="160.651510250689,18.4999998062849" />
         <NodeLayout
-          Size="308,41.6"
+          Size="276,41.6"
           Id="Package\DFT - ODS Employees\DER - Seperate city and state name in Site"
-          TopLeft="150.803024400515,95.924241511328" />
+          TopLeft="164.969690293149,98.5242414932479" />
         <NodeLayout
           Size="208.8,41.6"
           Id="Package\DFT - ODS Employees\LKP - Join State and Region"
@@ -995,18 +995,18 @@ where [refTable].[StateCD] = ?</property>
           TopLeft="228.787866287461,284.424240446392" />
         <EdgeLayout
           Id="Package\DFT - ODS Employees.Paths[OLE DB Source Output]"
-          TopLeft="305.727267325602,60.0999998062849">
+          TopLeft="304.810600271919,60.0999998062849">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.8242417050431"
+              EndConnector="0,38.424241686963"
               Start="0,0"
-              End="0,28.3242417050431">
+              End="0,30.924241686963">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.3242417050431" />
+                    End="0,30.924241686963" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1021,14 +1021,14 @@ where [refTable].[StateCD] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,54.536362929597"
+              EndConnector="0,54.5363629295969"
               Start="0,0"
-              End="0,47.036362929597">
+              End="0,47.0363629295969">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,47.036362929597" />
+                    End="0,47.0363629295969" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1041,18 +1041,18 @@ where [refTable].[StateCD] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT - ODS Employees.Paths[Derived Column Output]"
-          TopLeft="304.699991729856,137.524241511328">
+          TopLeft="303.783324676173,140.124241493248">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,50.7636360054667"
+              EndConnector="0,48.1636360235471"
               Start="0,0"
-              End="0,43.2636360054667">
+              End="0,40.6636360235471">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.2636360054667" />
+                    End="0,40.6636360235471" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1067,14 +1067,14 @@ where [refTable].[StateCD] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47.6575752863982"
+              EndConnector="0,47.6575752863981"
               Start="0,0"
-              End="0,40.1575752863982">
+              End="0,40.1575752863981">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.1575752863982" />
+                    End="0,40.1575752863981" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
