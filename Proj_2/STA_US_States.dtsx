@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="10"
-  DTS:VersionGUID="{70D09527-C995-41F4-8B23-9EF69DA3E038}">
+  DTS:VersionBuild="11"
+  DTS:VersionGUID="{3D51A172-D512-407D-881B-2BB4DA55CCC5}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -454,25 +454,25 @@
         <NodeLayout
           Size="207.2,41.6"
           Id="Package\DFT - STA US_States\OLE_DST - STA US_States"
-          TopLeft="22.8333329922623,83.0583324220114" />
+          TopLeft="47.8333316263225,92.5916656890511" />
         <NodeLayout
           Size="233.6,41.6"
           Id="Package\DFT - STA US_States\FF_SRC - US States"
-          TopLeft="5.5,5.5" />
+          TopLeft="36.3333316486744,19.3666665702396" />
         <EdgeLayout
           Id="Package\DFT - STA US_States.Paths[Flat File Source Output]"
-          TopLeft="124.366666496131,47.1">
+          TopLeft="152.283331637498,60.9666665702396">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,35.9583324220114"
+              EndConnector="0,31.6249991188115"
               Start="0,0"
-              End="0,28.4583324220114">
+              End="0,24.1249991188115">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.4583324220114" />
+                    End="0,24.1249991188115" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
